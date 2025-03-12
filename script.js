@@ -1,32 +1,42 @@
-function calculateVolume() {
-    const radiusInputElement = document.getElementById("radius");
-    const heightInputElement = document.getElementById("height");
+function calculateFraction() {
+    const numeratorLeftElement = document.querySelector("#numeratorLeft");
+    const denominatorLeftElement = document.querySelector("#denominatorLeft");
+    const numeratorRightElement = document.querySelector("#numeratorRight")
+    const denominatorRightElement = document.querySelector("#denominatorRight")
+    const operatorElement = document.querySelector("#operator")
 
-    let radiusInput = radiusInputElement.value.replace(/,/g, '');
-    let heightInput = heightInputElement.value.replace(/,/g, '');
+    const numeratorLeft = Math.round(numeratorLeftElement.value);
+    const denominatorLeft = Math.round(denominatorLeftElement.value);
+    const numeratorRight = Math.round(numeratorRightElement.value)
+    const denominatorRight = Math.round(denominatorRightElement.value)
 
-    const radius = parseFloat(radiusInput);
-    const height = parseFloat(heightInput);
+    const resultElement = document.querySelector("#result");
 
-    const resultElement = document.getElementById("result");
-
-    if (isNaN(radius) || isNaN(height) || radius <= 0 || height <= 0) {
-        resultElement.textContent = "Please enter valid numbers for radius and height.";
+    if (isNaN(denominatorLeft) || isNaN(denominatorRight) || isNaN(numeratorLeft) || isNaN(numeratorRight) || denominatorLeft <= 0 || denominatorRight <= 0) {
+        resultElement.textContent = "Please enter valid numbers. Denominators cannot be negative or zero, and all fields must contain an integer.";
         resultElement.style.color = "red";
+    } else if (operatorElement.value == "plus") {
+        let result = math.add(math.fraction(numeratorLeft, denominatorLeft), math.fraction(numeratorRight, denominatorRight))
+        if (Number(result.n) > Number(result.d)) {
+            let wholeNumber = Number(result.n) % Number(result.d)
+            result = math.subtract(result, wholeNumber)
+            resultElement.textContent = `The answer is: ${wholeNumber} ${result.toFraction()}`;
+            resultElement.style.color = "black";
+        } else {
+            resultElement.textContent = `The answer is: ${result.toFraction()}`;
+            resultElement.style.color = "black";
+        }
     } else {
-        const volume = (1 / 3) * Math.PI * Math.pow(radius, 2) * height;
-
-        // Format the volume result with commas
-        const formattedVolume = volume.toLocaleString(undefined, {
-            minimumFractionDigits: 2,
-            maximumFractionDigits: 2,
-        });
-
-        resultElement.textContent = `The volume of the cone is: ${formattedVolume} cubic units.`;
-        resultElement.style.color = "black";
-
-        // ✅ Format both input fields with commas after calculation
-        radiusInputElement.value = radius.toLocaleString('en-US');
-        heightInputElement.value = height.toLocaleString('en-US');
+        //if operator minus -- modify if add multiply or divide or something
+        let result = math.subtract(math.fraction(numeratorLeft, denominatorLeft), math.fraction(numeratorRight, denominatorRight))
+        if (Number(result.n) > Number(result.d)) {
+            let wholeNumber = Number(result.n) % Number(result.d)
+            result = math.subtract(result, wholeNumber)
+            resultElement.textContent = `The answer is: ${wholeNumber} ${result.toFraction()}`;
+            resultElement.style.color = "black";
+        } else {
+            resultElement.textContent = `The answer is: ${result.toFraction()}`;
+            resultElement.style.color = "black";
+        }
     }
 }

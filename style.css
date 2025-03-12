@@ -600,3 +600,8 @@ body:not(.no-sidebar) .entry-content .alignfull {
     padding: 10px;
     background-color: white;
 }
+
+.fractionParts {
+    display: flex;
+    gap: 1em;
+}

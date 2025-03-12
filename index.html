@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cone Volume Calculator </title>
+    <title>Fraction Calculator </title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/14.0.1/math.js"></script>
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -13,24 +14,33 @@
     <script src="script.js" defer></script>
 
     <div class="calculatorcontainer" id="calculator">
-        <div class="background"> <label for="radius">Radius of the Base:</label><br>
-            <input onkeypress="if (event.key === 'Enter') calculateVolume()" onkeyup="formatNumberInput(this)"
-                id="radius" placeholder="Radius" type="text">
-            <p></p>
-            <p>
-                <label for="height">Height of the Cone:</label><br>
-                <input onkeypress="if (event.key === 'Enter') calculateVolume()" onkeyup="formatNumberInput(this)"
-                    id="height" placeholder="Height" type="text">
-            </p>
-            <p id="result"></p>
-            <p>
-                <button class="calculate" onclick="calculateVolume()" data-uw-rm-kbnav="click">Calculate Volume</button>
-            </p>
+        <div class="background">
+            <div class="fractionParts">
+                <div class="fractionLeft">
+                    <input onkeypress="if (event.key === 'Enter') calculateFraction()" onkeyup="formatNumberInput(this)"
+                        id="numeratorLeft" type="number">
+                    <hr>
+                    <input onkeypress="if (event.key === 'Enter') calculateFraction()" onkeyup="formatNumberInput(this)"
+                        id="denominatorLeft" type="number">
+                </div>
+                <select name="operator" id="operator">
+                    <option value="plus">+</option>
+                    <option value="minus">-</option>
+                </select>
+                <div class="fractionRight">
+                    <input onkeypress="if (event.key === 'Enter') calculateFraction()" onkeyup="formatNumberInput(this)"
+                        id="numeratorRight" type="number">
+                    <hr>
+                    <input onkeypress="if (event.key === 'Enter') calculateFraction()" onkeyup="formatNumberInput(this)"
+                        id="denominatorRight" type="number">
+                </div>
+            </div>
+            <div id="result"></div>
+            <button class="calculate" onclick="calculateFraction()" data-uw-rm-kbnav="click">Calculate</button>
         </div>
-        <div id="formula" style="text-align: center; margin-bottom: 20px; font-size: 90%;"> Found a bug? <a
-                class="ylist"
-                href="https://airtable.com/appR7FfpamrmFpTmL/pagGUR4cIuGPtr6cm/form?prefill_Calculator=ConeVolume&amp;hide_Calculator=true"
-                target="_blank" rel="noopener">Let us know!</a></div>
+    </div>
+    <div id="formula" style="text-align: center; margin-bottom: 20px; font-size: 90%;"> Found a bug? <a class="ylist"
+            href="" target="_blank" rel="noopener">Let us know!</a></div>
     </div>
 </body>
 
