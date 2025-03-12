@@ -18,10 +18,10 @@
             <div class="fractionParts">
                 <div class="fractionLeft">
                     <input onkeypress="if (event.key === 'Enter') calculateFraction()" onkeyup="formatNumberInput(this)"
-                        id="numeratorLeft" type="number">
+                        class="fractionInput" id="numeratorLeft" type="number">
                     <hr>
                     <input onkeypress="if (event.key === 'Enter') calculateFraction()" onkeyup="formatNumberInput(this)"
-                        id="denominatorLeft" type="number">
+                        class="fractionInput" id="denominatorLeft" type="number">
                 </div>
                 <select name="operator" id="operator">
                     <option value="plus">+</option>
@@ -29,10 +29,10 @@
                 </select>
                 <div class="fractionRight">
                     <input onkeypress="if (event.key === 'Enter') calculateFraction()" onkeyup="formatNumberInput(this)"
-                        id="numeratorRight" type="number">
+                        class="fractionInput" id="numeratorRight" type="number">
                     <hr>
                     <input onkeypress="if (event.key === 'Enter') calculateFraction()" onkeyup="formatNumberInput(this)"
-                        id="denominatorRight" type="number">
+                        class="fractionInput" id="denominatorRight" type="number">
                 </div>
             </div>
             <div id="result"></div>
