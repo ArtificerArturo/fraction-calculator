@@ -14,12 +14,12 @@
     <script src="script.js" defer></script>
 
     <div class="calculatorcontainer" id="calculator">
-        <div class="background">
+        <div class="background">Add or Subtract Fractions:
             <div class="fractionParts">
                 <div class="fractionLeft">
                     <input onkeypress="if (event.key === 'Enter') calculateFraction()" onkeyup="formatNumberInput(this)"
                         class="fractionInput" id="numeratorLeft" type="number">
-                    <hr>
+                    <hr class="fractionBar">
                     <input onkeypress="if (event.key === 'Enter') calculateFraction()" onkeyup="formatNumberInput(this)"
                         class="fractionInput" id="denominatorLeft" type="number">
                 </div>
@@ -30,7 +30,7 @@
                 <div class="fractionRight">
                     <input onkeypress="if (event.key === 'Enter') calculateFraction()" onkeyup="formatNumberInput(this)"
                         class="fractionInput" id="numeratorRight" type="number">
-                    <hr>
+                    <hr class="fractionBar">
                     <input onkeypress="if (event.key === 'Enter') calculateFraction()" onkeyup="formatNumberInput(this)"
                         class="fractionInput" id="denominatorRight" type="number">
                 </div>
