@@ -14,7 +14,7 @@
     <script src="script.js" defer></script>
 
     <div class="calculatorcontainer" id="calculator">
-        <div class="background">Add or Subtract Fractions:
+        <div class="background">Add, Subtract, Multiply, or Divide Fractions
             <div class="fractionParts">
                 <div class="fractionLeft">
                     <input onkeypress="if (event.key === 'Enter') calculateFraction()" onkeyup="formatNumberInput(this)"
@@ -25,7 +25,9 @@
                 </div>
                 <select name="operator" id="operator">
                     <option value="plus">+</option>
-                    <option value="minus">-</option>
+                    <option value="minus">–</option>
+                    <option value="multiply">x</option>
+                    <option value="divide">÷</option>
                 </select>
                 <div class="fractionRight">
                     <input onkeypress="if (event.key === 'Enter') calculateFraction()" onkeyup="formatNumberInput(this)"
@@ -35,7 +37,15 @@
                         class="fractionInput" id="denominatorRight" type="number">
                 </div>
             </div>
-            <div id="result"></div>
+            <div id="result">
+                <div id="resultWholeNumber"></div>
+                <div id="resultFractionParts">
+                    <div id="resultNumerator"></div>
+                    <div id="resultFractionBar"></div>
+                    <div id="resultDenominator"></div>
+                </div>
+            </div>
+
             <button class="calculate" onclick="calculateFraction()" data-uw-rm-kbnav="click">Calculate</button>
         </div>
     </div>

@@ -549,6 +549,7 @@ body:not(.no-sidebar) .entry-content .alignfull {
 
 .calculatorcontainer {
     text-align: center;
+    font-size: 18px;
 }
 
 .background {
@@ -570,6 +571,7 @@ body:not(.no-sidebar) .entry-content .alignfull {
     padding: 10px 20px;
     transition: 0.1s;
     text-decoration: none;
+    font-size: 18px;
 }
 
 .calculate:hover {
@@ -589,7 +591,12 @@ body:not(.no-sidebar) .entry-content .alignfull {
 #result {
     font-weight: 700;
     padding: 0px 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
+
+
 
 #formula {
     font-size: medium;
@@ -612,6 +619,7 @@ body:not(.no-sidebar) .entry-content .alignfull {
 
 .fractionInput {
     max-width: 50px;
+    font-size: 18px;
 }
 
 #operator {
