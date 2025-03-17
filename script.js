@@ -4,7 +4,7 @@ function calculateFraction() {
     const numeratorRightElement = document.querySelector("#numeratorRight")
     const denominatorRightElement = document.querySelector("#denominatorRight")
     const operatorElement = document.querySelector("#operator")
-    const resultElement = document.querySelector("#result");
+    const resultElement = document.querySelector("#fractionResult");
 
     //round input to nearest integer. could change this to just reject non-integers
     const numeratorLeft = Math.round(numeratorLeftElement.value)
@@ -20,8 +20,8 @@ function calculateFraction() {
 
     if (isNaN(denominatorLeft) || isNaN(denominatorRight) ||
         denominatorLeft <= 0 || denominatorRight <= 0) {
-        resultWholeNumber.textContent = "Please enter valid numbers. Denominators cannot be negative or zero, and all fields must contain integers.";
         resultElement.style.color = "red";
+        resultWholeNumber.textContent = "Please enter valid numbers. Denominators cannot be negative or zero, and all fields must contain integers.";
         resultNumerator.textContent = ""
         resultDenominator.textContent = ""
         resultFractionBar.style.border = ""
@@ -41,7 +41,7 @@ function displayFraction(result) {
     const resultNumerator = document.querySelector("#resultNumerator")
     const resultDenominator = document.querySelector("#resultDenominator")
     const resultFractionBar = document.querySelector("#resultFractionBar")
-    const resultElement = document.querySelector("#result");
+    const resultElement = document.querySelector("#fractionResult");
 
     resultElement.style.color = "black";
 
