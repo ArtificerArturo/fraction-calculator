@@ -14,27 +14,27 @@
     <script src="script.js" defer></script>
 
     <div class="calculatorcontainer" id="calculator">
-        <div class="background">Add, Subtract, Multiply, or Divide Fractions
+        <div class="background"><label>Add, Subtract, Multiply, or Divide Fractions</label>
             <div class="fractionParts">
-                <div class="fractionLeft">
-                    <input onkeypress="if (event.key === 'Enter') calculateFraction()" onkeyup="formatNumberInput(this)"
-                        class="fractionInput" id="numeratorLeft" type="number">
-                    <hr class="fractionBar">
-                    <input onkeypress="if (event.key === 'Enter') calculateFraction()" onkeyup="formatNumberInput(this)"
-                        class="fractionInput" id="denominatorLeft" type="number">
+                <div class="fractionStack">
+                    <div><input onkeypress="if (event.key === 'Enter') calculateFraction()" class="fractionInput"
+                            id="numeratorLeft" type="number"></div>
+                    <div class="fractionBar"></div>
+                    <div><input onkeypress="if (event.key === 'Enter') calculateFraction()" class="fractionInput"
+                            id="denominatorLeft" type="number"></div>
                 </div>
-                <select name="operator" id="operator">
-                    <option value="plus">+</option>
-                    <option value="minus">–</option>
-                    <option value="multiply">x</option>
-                    <option value="divide">÷</option>
-                </select>
-                <div class="fractionRight">
-                    <input onkeypress="if (event.key === 'Enter') calculateFraction()" onkeyup="formatNumberInput(this)"
-                        class="fractionInput" id="numeratorRight" type="number">
-                    <hr class="fractionBar">
-                    <input onkeypress="if (event.key === 'Enter') calculateFraction()" onkeyup="formatNumberInput(this)"
-                        class="fractionInput" id="denominatorRight" type="number">
+                <div><select name="operator" id="operator">
+                        <option value="plus">+</option>
+                        <option value="minus">–</option>
+                        <option value="multiply">x</option>
+                        <option value="divide">÷</option>
+                    </select></div>
+                <div class="fractionStack">
+                    <div><input onkeypress="if (event.key === 'Enter') calculateFraction()" class="fractionInput"
+                            id="numeratorRight" type="number"></div>
+                    <div class="fractionBar"></div>
+                    <div><input onkeypress="if (event.key === 'Enter') calculateFraction()" class="fractionInput"
+                            id="denominatorRight" type="number"></div>
                 </div>
             </div>
             <div id="result">
@@ -46,11 +46,13 @@
                 </div>
             </div>
 
-            <button class="calculate" onclick="calculateFraction()" data-uw-rm-kbnav="click">Calculate</button>
+            <div><button class="calculate" onclick="calculateFraction()" data-uw-rm-kbnav="click">Calculate</button>
+            </div>
         </div>
     </div>
     <div id="formula" style="text-align: center; margin-bottom: 20px; font-size: 90%;"> Found a bug? <a class="ylist"
-            href="" target="_blank" rel="noopener">Let us know!</a></div>
+            href="https://airtable.com/appR7FfpamrmFpTmL/pagGUR4cIuGPtr6cm/form?prefill_Calculator=FractionCalculator&amp;hide_Calculator=true"
+            target="_blank" rel="noopener">Let us know!</a></div>
     </div>
 </body>
 

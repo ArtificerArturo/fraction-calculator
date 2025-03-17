@@ -1,17 +1,11 @@
-const resultWholeNumber = document.querySelector("#resultWholeNumber")
-const resultNumerator = document.querySelector("#resultNumerator")
-const resultDenominator = document.querySelector("#resultDenominator")
-const resultFractionBar = document.querySelector("#resultFractionBar")
-const resultElement = document.querySelector("#result");
-
-const numeratorLeftElement = document.querySelector("#numeratorLeft");
-const denominatorLeftElement = document.querySelector("#denominatorLeft");
-const numeratorRightElement = document.querySelector("#numeratorRight")
-const denominatorRightElement = document.querySelector("#denominatorRight")
-
-const operatorElement = document.querySelector("#operator")
-
 function calculateFraction() {
+    const numeratorLeftElement = document.querySelector("#numeratorLeft");
+    const denominatorLeftElement = document.querySelector("#denominatorLeft");
+    const numeratorRightElement = document.querySelector("#numeratorRight")
+    const denominatorRightElement = document.querySelector("#denominatorRight")
+    const operatorElement = document.querySelector("#operator")
+    const resultElement = document.querySelector("#result");
+
     //round input to nearest integer. could change this to just reject non-integers
     const numeratorLeft = Math.round(numeratorLeftElement.value)
     const denominatorLeft = Math.round(denominatorLeftElement.value)
@@ -23,8 +17,6 @@ function calculateFraction() {
     denominatorLeftElement.value = denominatorLeft
     numeratorRightElement.value = numeratorRight
     denominatorRightElement.value = denominatorRight
-
-    const resultElement = document.querySelector("#result");
 
     if (isNaN(denominatorLeft) || isNaN(denominatorRight) ||
         denominatorLeft <= 0 || denominatorRight <= 0) {
@@ -45,6 +37,12 @@ function calculateFraction() {
 }
 
 function displayFraction(result) {
+    const resultWholeNumber = document.querySelector("#resultWholeNumber")
+    const resultNumerator = document.querySelector("#resultNumerator")
+    const resultDenominator = document.querySelector("#resultDenominator")
+    const resultFractionBar = document.querySelector("#resultFractionBar")
+    const resultElement = document.querySelector("#result");
+
     resultElement.style.color = "black";
 
     let resultArray = []
