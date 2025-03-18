@@ -1,6 +1,8 @@
 .calculatorcontainer {
     text-align: center;
     font-size: 18px;
+    max-width: 400px;
+    margin: 0 auto;
 }
 
 .background {
@@ -30,11 +32,6 @@
     color: #fff;
 }
 
-#calculator {
-    max-width: 400px;
-    margin: 0 auto;
-}
-
 #redirect {
     display: inline-block;
 }
@@ -46,8 +43,6 @@
     align-items: center;
     gap: 5px;
 }
-
-
 
 #formula {
     font-size: medium;
@@ -69,11 +64,11 @@
 }
 
 .background .fractionInput {
-    max-width: 50px;
+    max-width: 75px;
     font-size: 18px;
 }
 
-#operator {
+#fracFourFunc #operator {
     font-size: larger;
     font-weight: bold;
 }
